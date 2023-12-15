@@ -1,7 +1,7 @@
 const { NotImplementedError } = require('../extensions/index.js');
 
 const { ListNode } = require('../extensions/list-node.js');
-const {removeKFromList} =reqiuire('../remove-from-list.js')
+const { removeKFromList } = require('../src/remove-from-list.js');
 
 /**
  * Implement the Queue with a given interface via linked list (use ListNode extension above).
@@ -40,10 +40,9 @@ class Queue {
   }
 
   dequeue() {
-    throw new NotImplementedError('Not implemented');
-    /*let head = this.queue.value;
-    removeKFromList(this.queue, head);
-    return head;*/
+    let head = this.queue.value;
+    this.queue = removeKFromList(this.queue, head);
+    return head;
   }
 }
 
